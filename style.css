@@ -1,0 +1,315 @@
+/* ============================================================
+   Graham K Portfolio — style.css
+   ============================================================ */
+
+@font-face {
+  font-display: block;
+  font-family: "Diatype";
+  src: url("https://type.cargo.site/files/CargoDiatype-Regular.woff2") format("woff2"),
+       url("https://type.cargo.site/files/CargoDiatype-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-display: block;
+  font-family: "Diatype";
+  src: url("https://type.cargo.site/files/CargoDiatype-Medium.woff2") format("woff2"),
+       url("https://type.cargo.site/files/CargoDiatype-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100vh; }
+body {
+  background-color: rgb(232, 232, 232);
+  color: rgba(0,0,0,0.85);
+  font-family: "Diatype", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+a:active { opacity: 0.7; }
+img { display: block; border: 0; }
+
+/* ============================================================
+   Header
+   ============================================================ */
+#site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+.header-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 4.2rem 7.5rem 0 7.5rem;
+  pointer-events: auto;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: rgba(0,0,0,0.75);
+  font-family: "Diatype", -apple-system, sans-serif;
+}
+.logo { color: rgba(0,0,0,0.75); font-size: 1.5rem; font-weight: 500; }
+nav { display: flex; }
+nav a {
+  color: rgba(0,0,0,0.75);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: 2.4rem;
+  font-family: "Diatype", -apple-system, sans-serif;
+}
+nav a:first-child { margin-left: 0; }
+nav a.active { opacity: 0.4; }
+
+/* ============================================================
+   Homepage thumbnail grid
+   ============================================================ */
+.main-container { width: 100%; min-height: 100vh; }
+
+.thumbnails-container {
+  width: 94%;
+  margin: 0 auto;
+  padding: 16rem 3rem 12rem;
+}
+.thumbnail-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1rem;
+}
+.thumb-item { width: 50%; padding: 1rem; }
+.thumb-link { display: block; }
+.thumb-image {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #ccc;
+}
+.thumb-image::before {
+  content: "";
+  display: block;
+  padding-bottom: 56.25%;
+}
+.thumb-image img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.thumb-title {
+  margin-top: 1.0rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(0,0,0,0.85);
+  font-family: "Diatype", -apple-system, sans-serif;
+  line-height: 1.3;
+}
+
+/* ============================================================
+   Project pages
+   ============================================================ */
+.project-layout {
+  width: 94%;
+  margin: 0 auto;
+  padding: 14rem 3rem 12rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 500;
+  color: rgba(0,0,0,0.85);
+  font-family: "Diatype", -apple-system, sans-serif;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+.page-subtitle {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: rgba(0,0,0,0.40);
+  font-family: "Diatype", -apple-system, sans-serif;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+}
+.page-meta {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(0,0,0,0.75);
+  font-family: "Diatype", -apple-system, sans-serif;
+  line-height: 1.4;
+  margin-bottom: 4rem;
+}
+
+/* 2-column masonry grid */
+.project-grid {
+  columns: 2;
+  column-gap: 1.2rem;
+}
+.project-grid .grid-item {
+  break-inside: avoid;
+  margin-bottom: 1.2rem;
+  display: block;
+  width: 100%;
+  background-color: #d4d4d4;
+  cursor: zoom-in;
+}
+.project-grid .grid-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.project-grid .grid-item img.loaded { opacity: 1; }
+.project-grid .grid-item:hover img { opacity: 0.88; }
+
+/* ============================================================
+   Bottom page nav
+   ============================================================ */
+.page-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+.page-nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 7.5rem 4rem 7.5rem;
+  pointer-events: auto;
+}
+.page-nav-inner a {
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: "Diatype", -apple-system, sans-serif;
+  color: rgba(0,0,0,0.75);
+  line-height: 1.1;
+}
+.page-nav-inner a:active { opacity: 0.7; }
+
+/* ============================================================
+   About page
+   ============================================================ */
+.about-layout { padding: 16rem 7.5rem 6rem; }
+.about-columns {
+  display: flex;
+  gap: 8rem;
+  align-items: flex-start;
+}
+.about-body {
+  max-width: 60rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(0,0,0,0.75);
+  font-family: "Diatype", -apple-system, sans-serif;
+  line-height: 1.6;
+}
+.about-body p + p { margin-top: 1.5rem; }
+.about-contact { flex-shrink: 0; padding-top: 0.2rem; }
+.about-email {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Diatype", -apple-system, sans-serif;
+  color: rgba(0,0,0,0.75);
+}
+.about-email:hover { opacity: 0.5; }
+
+/* ============================================================
+   Lightbox
+   ============================================================ */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0,0,0,0.92);
+  align-items: center;
+  justify-content: center;
+}
+#lightbox.open { display: flex; }
+
+#lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+}
+
+/* Prev / Next arrows */
+.lb-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2rem;
+  color: rgba(255,255,255,0.7);
+  font-size: 3rem;
+  font-family: "Diatype", -apple-system, sans-serif;
+  line-height: 1;
+  transition: color 0.15s;
+  z-index: 1001;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.lb-arrow:hover { color: #fff; }
+#lb-prev { left: 2rem; }
+#lb-next { right: 2rem; }
+
+/* Close button */
+#lb-close {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255,255,255,0.6);
+  font-size: 2.4rem;
+  font-family: "Diatype", -apple-system, sans-serif;
+  line-height: 1;
+  transition: color 0.15s;
+  z-index: 1001;
+}
+#lb-close:hover { color: #fff; }
+
+/* Counter */
+#lb-counter {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.4);
+  font-size: 1.3rem;
+  font-family: "Diatype", -apple-system, sans-serif;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+  .header-inner { padding: 2.5rem 2rem 0; }
+  nav a { margin-left: 1.6rem; }
+  .thumbnails-container { width: 100%; padding: 12rem 1.5rem 10rem; }
+  .thumb-item { width: 100%; }
+  .project-layout { width: 100%; padding: 12rem 1.5rem 10rem; }
+  .project-grid { columns: 1; }
+  .page-nav-inner { padding: 0 2rem 3rem; }
+  .page-nav-inner a { font-size: 2.2rem; }
+  .about-layout { padding: 12rem 2rem 4rem; }
+  .about-columns { flex-direction: column; gap: 2rem; }
+  #lb-prev { left: 0.5rem; }
+  #lb-next { right: 0.5rem; }
+}

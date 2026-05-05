@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorations — Graham K</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">GK</a>
+      <nav>
+        <a href="styleframes.html">Styleframes</a>
+        <a href="explorations.html">Explorations</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="project-layout">
+      <h1 class="page-title">Simulations, R&amp;D, Learning</h1>
+      <p class="page-subtitle">Simulations in C4D and Houdini, mostly from attempts to learn the programs</p>
+      <p class="page-meta"><strong>Roles: All Roles (Cinema 4d, Maya, Houdini, Redshift, After Effects)</strong></p>
+      <div class="project-grid" id="project-grid"></div>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <div class="page-nav-inner">
+      <a href="index.html">Work</a>
+      <a href="about.html">Next →</a>
+    </div>
+  </nav>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <button id="lb-close">✕</button>
+    <button class="lb-arrow" id="lb-prev">←</button>
+    <img id="lightbox-img" src="" alt="">
+    <button class="lb-arrow" id="lb-next">→</button>
+    <span id="lb-counter"></span>
+  </div>
+
+  <script>
+    var MANIFEST = [
+      "001_gif.gif","002_gif.gif","003_gif.gif","004_gif.gif","005_gif.gif"
+    ];
+    var FOLDER = "images/explorations";
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>
